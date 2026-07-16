@@ -31,8 +31,7 @@ jobs:
       - name: Build firmware
         run: |
           cd openwrt
-          make defconfig
-          make -j$(nproc)
+          make -r -j1 V=s
 
       - name: Upload firmware
         uses: actions/upload-artifact@v4
